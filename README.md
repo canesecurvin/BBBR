@@ -1,4 +1,4 @@
-<img src="" width="160" height=auto />
+<img src="photos/Screen Shot 2022-08-07 at 11.17.41 AM.png" width="160" height=auto />
 
 # Black Businesses of Baton Rouge (Proof Of Concept)
 
