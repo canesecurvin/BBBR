@@ -2,10 +2,6 @@
 
 # Black Businesses of Baton Rouge (Proof Of Concept)
 
-## Description
-This POC was created by Ca'Nese Curvin to showcase small businesses owned by black individuals.
-
-
 ## Table of Contents
 * [BBBR]
 	* [Description](#description)
@@ -13,15 +9,19 @@ This POC was created by Ca'Nese Curvin to showcase small businesses owned by bla
 	* [Coming Soon!](#coming-soon)
 	* [License](#license)
 
+## Description
+This POC was created by Ca'Nese Curvin to showcase small businesses owned by black individuals.
+
 
 ## Screenshots (Version 1)
-<img src="photos/Screen Shot 2022-08-07 at 11.15.08 AM.png">
-<img src="photos/Screen Shot 2022-08-07 at 11.15.15 AM.png">
-<img src="photos/Screen Shot 2022-08-07 at 11.15.21 AM.png">
+>>User Flow
+>><img src="photos/Screen Shot 2022-10-16 at 7.47.14 PM.png">
+<img src="photos/Screen Shot 2022-10-16 at 7.55.56 PM.png">
+<img src="photos/Screen Shot 2022-10-16 at 7.56.04 PM.png">
 
 
 ## Coming Soon
-I look forward to updating the design and publishing this site for locals to use.
+I look forward to updating the design and showacasing my capstone project.
 
 ## License
 GNU GENERAL PUBLIC LICENSE
