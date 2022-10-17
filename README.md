@@ -14,7 +14,7 @@ This POC was created by Ca'Nese Curvin to showcase small businesses owned by bla
 
 
 ## Screenshots (Version 1)
->>User Flow
+>User Flow
 >><img src="photos/Screen Shot 2022-10-16 at 7.47.14 PM.png">
 <img src="photos/Screen Shot 2022-10-16 at 7.55.56 PM.png">
 <img src="photos/Screen Shot 2022-10-16 at 7.56.04 PM.png">
