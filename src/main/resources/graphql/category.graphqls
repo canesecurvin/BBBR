@@ -1,0 +1,17 @@
+extend type QueryResolver {
+    categoryId(id: ID!): Category!
+}
+
+extend type MutationResolver {
+    newCategory(category: CategoryInput!): Category
+}
+
+input CategoryInput {
+    category_name: String!
+}
+
+type Category {
+    id: ID!
+    category_name: String!
+    business_ids: [Business]
+}
