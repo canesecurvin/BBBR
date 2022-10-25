@@ -32,7 +32,7 @@ public class Business {
     private String specialty;
     @Column(name = "credentials")
     private String credentials;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @Column(name = "category_id")
     private Category categoryId;
 
