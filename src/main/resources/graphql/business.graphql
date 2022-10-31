@@ -1,34 +1,32 @@
-type QueryResolver {
-    businesses: [Business]
-    business(id: ID!): Business!
+type BusinessQuery {
+    businesses: [BusinessResponse]
+    business(id: ID!): BusinessResponse!
 }
-type MutationResolver {
-    newBusiness(business: BusinessInput!): Business
-}
-
-enum Location {
-    double, double
+type BusinessMutation {
+    newBusiness(business: BusinessRequest!): BusinessResponse
+    updateBusiness(businessId: ID!, business: BusinessRequest): BusinessResponse
+    deleteBusiness(businessId: ID!): String
 }
 
-input BusinessInput {
-    business_name: String!
-    owner_name: String!
+input BusinessRequest {
+    businessName: String!
+    ownerName: String!
     description: String!
-    location: Location!
+    location: String!
     website: String!
     specialty: String!
     credentials: String!
-    category_id: Int!
+    categoryId: Int!
 }
 
-type Business {
+type BusinessResponse {
     id: ID!
-    business_name: String!
-    owner_name: String!
+    businessName: String!
+    ownerName: String!
     description: String!
-    location: Location!
+    location: String!
     website: String!
     specialty: String!
     credentials: String!
-    category_id: Category!
+    category: Category!
 }

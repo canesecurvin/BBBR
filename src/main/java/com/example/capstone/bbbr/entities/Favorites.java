@@ -5,21 +5,20 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Entity
-@Table(name = "categories")
-public class Category {
+@Table(name = "favorites")
+public class Favorites {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
     private Long id;
-
-    @Column(name = "category_name")
-    private String categoryName;
-    @OneToMany(mappedBy = "category")
-    private List<Business> businesses;
+    @JoinColumn(name = "user_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private User user;
+    @Column(name = "business_id")
+    private Long businessId;
 }
