@@ -1,4 +1,4 @@
-package com.example.capstone.bbbr.services.requests;
+package com.example.capstone.bbbr.requests;
 
 import lombok.Data;
 

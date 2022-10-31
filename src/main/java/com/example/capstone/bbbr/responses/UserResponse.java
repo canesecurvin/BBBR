@@ -1,4 +1,4 @@
-package com.example.capstone.bbbr.services.responses;
+package com.example.capstone.bbbr.responses;
 
 import com.example.capstone.bbbr.entities.Favorites;
 import com.example.capstone.bbbr.entities.User;

@@ -2,7 +2,7 @@ package com.example.capstone.bbbr.services;
 
 import com.example.capstone.bbbr.entities.User;
 import com.example.capstone.bbbr.repositories.UserRepository;
-import com.example.capstone.bbbr.services.responses.UserResponse;
+import com.example.capstone.bbbr.responses.UserResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
