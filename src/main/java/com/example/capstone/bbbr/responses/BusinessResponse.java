@@ -1,17 +1,11 @@
-package com.example.capstone.bbbr.dtos;
+package com.example.capstone.bbbr.responses;
 
 import com.example.capstone.bbbr.entities.Business;
 import com.example.capstone.bbbr.entities.Category;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
-
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
-public class BusinessDto {
+public class BusinessResponse {
     private Long id;
     private String businessName;
     private String ownerName;
@@ -20,9 +14,9 @@ public class BusinessDto {
     private String description;
     private String specialty;
     private String credentials;
-    private Category categoryId;
+    private Category category;
 
-    public BusinessDto(Business business){
+    public BusinessResponse(Business business){
         if (business.getId()!=null)this.id = business.getId();
         if (business.getBusinessName()!=null)this.businessName = business.getBusinessName();
         if (business.getOwnerName()!=null)this.ownerName = business.getOwnerName();
@@ -30,6 +24,6 @@ public class BusinessDto {
         if (business.getDescription()!=null)this.description = business.getDescription();
         if (business.getSpecialty()!=null)this.specialty = business.getSpecialty();
         if (business.getCredentials()!=null)this.credentials = business.getCredentials();
-        if (business.getCategoryId()!=null)this.categoryId = business.getCategoryId();
+        if (business.getCategory()!=null)this.category = business.getCategory();
     }
 }

@@ -1,17 +1,18 @@
-extend type QueryResolver {
-    categoryId(id: ID!): Category!
+type CategoryQuery {
+    category(id: ID!): CategoryResponse!
 }
 
-extend type MutationResolver {
-    newCategory(category: CategoryInput!): Category
+type CategoryMutation {
+    newCategory(category: CategoryRequest!): CategoryResponse
+    deleteCategory(categoryId: ID!): String
 }
 
-input CategoryInput {
+input CategoryRequest {
     category_name: String!
 }
 
-type Category {
+type CategoryResponse {
     id: ID!
     category_name: String!
-    business_ids: [Business]
+    businesses: [BusinessResponse]
 }

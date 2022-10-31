@@ -1,6 +1,5 @@
 package com.example.capstone.bbbr.entities;
 
-import com.example.capstone.bbbr.dtos.BusinessDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -32,18 +31,7 @@ public class Business {
     private String specialty;
     @Column(name = "credentials")
     private String credentials;
-    @ManyToOne(fetch = FetchType.EAGER)
-    @Column(name = "category_id")
-    private Category categoryId;
-
-    public Business(BusinessDto businessDto){
-        if (businessDto.getId()!=null)this.id = businessDto.getId();
-        if (businessDto.getBusinessName()!=null)this.businessName = businessDto.getBusinessName();
-        if (businessDto.getOwnerName()!=null)this.ownerName = businessDto.getOwnerName();
-        if (businessDto.getLocation()!=null)this.location = businessDto.getLocation();
-        if (businessDto.getDescription()!=null)this.description = businessDto.getDescription();
-        if (businessDto.getSpecialty()!=null)this.specialty = businessDto.getSpecialty();
-        if (businessDto.getCredentials()!=null)this.credentials = businessDto.getCredentials();
-        if (businessDto.getCategoryId()!=null)this.categoryId = businessDto.getCategoryId();
-    }
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id")
+    private Category category;
 }
