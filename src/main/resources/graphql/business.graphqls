@@ -1,0 +1,31 @@
+extend type Query {
+    businesses: [BusinessResponse]
+    business(businessId: ID!): BusinessResponse!
+}
+extend type Mutation {
+    newBusiness(business: BusinessRequest!): BusinessResponse
+    updateBusiness(business: BusinessRequest, businessId: ID!): BusinessResponse
+    deleteBusiness(businessId: ID!): String
+}
+
+input BusinessRequest {
+    business_name: String!
+    owner_name: String!
+    description: String!
+    location: String!
+    website: String!
+    specialty: String!
+    credentials: String!
+#    categoryId: Int!
+}
+
+type BusinessResponse {
+    id: ID!
+    business_name: String!
+    owner_name: String!
+    description: String!
+    location: String!
+    website: String!
+    specialty: String!
+    credentials: String!
+}

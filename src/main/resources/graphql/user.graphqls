@@ -1,23 +1,29 @@
-extend type QueryResolver {
-    user(email: String!): User!
+type Query {
+    userLogin(user: LoginUserRequest!): UserResponse!
+    deleteUser(userId: ID!): String
 }
 
-extend type MutationResolver {
-    newUser(user: UserInput!): User
+type Mutation {
+    newUser(user: RegisterUserRequest!): UserResponse
+    updateUser(user: RegisterUserRequest!, userId: ID!): UserResponse
 }
 
-input UserInput {
-    first_name: String!
-    last_name: String!
+input RegisterUserRequest {
+    firstName: String!
+    lastName: String!
     email: String!
     password: String!
 }
 
-type User {
+input LoginUserRequest {
+    email: String!
+    password: String!
+}
+
+type UserResponse {
     id: ID!
-    first_name: String!
-    last_name: String!
+    firstName: String!
+    lastName: String!
     email: String!
-    password: String!
-    favorite_business: [Business]
+    favorites: [String]
 }
