@@ -27,11 +27,11 @@ public class UserServiceImpl implements UserService {
         return new UserResponse(user);
     }
     @Override
-    public UserResponse userLogin(LoginUserRequest loginUserRequest){
+    public UserResponse userLogin(LoginUserRequest loginUserRequest) {
         UserResponse userResponse = new UserResponse(loginUserRequest);
         Optional<User> userOptional = userRepository.findByEmail(loginUserRequest.getEmail());
-        if (userOptional.isPresent()){
-            if (passwordEncoder.matches(loginUserRequest.getPassword(), userOptional.get().getPassword())){
+        if (userOptional.isPresent()) {
+            if (passwordEncoder.matches(loginUserRequest.getPassword(), userOptional.get().getPassword())) {
                 userResponse.setId(userOptional.get().getId());
                 userResponse.setLastName(userOptional.get().getLastName());
                 userResponse.setFirstName(userOptional.get().getFirstName());

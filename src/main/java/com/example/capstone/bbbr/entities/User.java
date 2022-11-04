@@ -1,6 +1,7 @@
 package com.example.capstone.bbbr.entities;
 
 import com.example.capstone.bbbr.requests.RegisterUserRequest;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

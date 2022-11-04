@@ -1,6 +1,8 @@
 package com.example.capstone.bbbr.entities;
 
+
 import com.example.capstone.bbbr.requests.BusinessRequest;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -46,4 +48,5 @@ public class Business {
         if (business.getWebsite()!=null)this.website = business.getWebsite();
 //        if (business.getCategory()!=null)this.category = business.getCategory();
     }
+
 }

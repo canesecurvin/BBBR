@@ -32,6 +32,7 @@ public class UserResponse {
         if (user.getEmail()!=null)this.email = user.getEmail();
     }
 
+
     public UserResponse(LoginUserRequest user){
         if (user.getEmail()!=null)this.email = user.getEmail();
     }
