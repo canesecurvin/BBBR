@@ -1,6 +1,7 @@
 package com.example.capstone.bbbr.entities;
 
-import com.example.capstone.bbbr.requests.UserRequest;
+import com.example.capstone.bbbr.requests.RegisterUserRequest;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -30,9 +31,10 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<Favorites> favorites;
 
-    public User(UserRequest user){
+    public User(RegisterUserRequest user){
         if (user.getFirstName()!=null)this.firstName = user.getFirstName();
         if (user.getLastName()!=null)this.lastName = user.getLastName();
         if (user.getEmail()!=null)this.email = user.getEmail();
+        if (user.getPassword()!=null)this.password = user.getPassword();
     }
 }

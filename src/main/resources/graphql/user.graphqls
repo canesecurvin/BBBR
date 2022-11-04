@@ -1,24 +1,28 @@
-type UserQuery {
-    userLogin(user: UserRequest!): UserResponse!
-}
-
-type UserMutation {
-    newUser(user: UserRequest!): UserResponse
-    updateUser(userId: ID!, user: UserRequest!): UserResponse
+type Query {
+    userLogin(user: LoginUserRequest!): UserResponse!
     deleteUser(userId: ID!): String
 }
 
-input UserRequest {
-    first_name: String!
-    last_name: String!
+type Mutation {
+    newUser(user: RegisterUserRequest!): UserResponse
+    updateUser(user: RegisterUserRequest!, userId: ID!): UserResponse
+}
+
+input RegisterUserRequest {
+    firstName: String!
+    lastName: String!
+    email: String!
+    password: String!
+}
+input LoginUserRequest {
     email: String!
     password: String!
 }
 
 type UserResponse {
     id: ID!
-    first_name: String!
-    last_name: String!
+    firstName: String!
+    lastName: String!
     email: String!
-    favorites: [BusinessResponse]
+    favorites: [String]
 }

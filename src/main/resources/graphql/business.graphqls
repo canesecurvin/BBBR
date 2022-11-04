@@ -1,32 +1,31 @@
-type BusinessQuery {
+extend type Query {
     businesses: [BusinessResponse]
-    business(id: ID!): BusinessResponse!
+    business(businessId: ID!): BusinessResponse!
 }
-type BusinessMutation {
+extend type Mutation {
     newBusiness(business: BusinessRequest!): BusinessResponse
-    updateBusiness(businessId: ID!, business: BusinessRequest): BusinessResponse
+    updateBusiness(business: BusinessRequest, businessId: ID!): BusinessResponse
     deleteBusiness(businessId: ID!): String
 }
 
 input BusinessRequest {
-    businessName: String!
-    ownerName: String!
+    business_name: String!
+    owner_name: String!
     description: String!
     location: String!
     website: String!
     specialty: String!
     credentials: String!
-    categoryId: Int!
+#    categoryId: Int!
 }
 
 type BusinessResponse {
     id: ID!
-    businessName: String!
-    ownerName: String!
+    business_name: String!
+    owner_name: String!
     description: String!
     location: String!
     website: String!
     specialty: String!
     credentials: String!
-    category: Category!
 }

@@ -1,5 +1,8 @@
 package com.example.capstone.bbbr.entities;
 
+
+import com.example.capstone.bbbr.requests.BusinessRequest;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -34,4 +37,16 @@ public class Business {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
     private Category category;
+
+    public Business(BusinessRequest business){
+        if (business.getBusinessName()!=null)this.businessName = business.getBusinessName();
+        if (business.getOwnerName()!=null)this.ownerName = business.getOwnerName();
+        if (business.getLocation()!=null)this.location = business.getLocation();
+        if (business.getDescription()!=null)this.description = business.getDescription();
+        if (business.getSpecialty()!=null)this.specialty = business.getSpecialty();
+        if (business.getCredentials()!=null)this.credentials = business.getCredentials();
+        if (business.getWebsite()!=null)this.website = business.getWebsite();
+//        if (business.getCategory()!=null)this.category = business.getCategory();
+    }
+
 }

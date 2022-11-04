@@ -2,9 +2,13 @@ package com.example.capstone.bbbr.responses;
 
 import com.example.capstone.bbbr.entities.Business;
 import com.example.capstone.bbbr.entities.Category;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class BusinessResponse {
     private Long id;
     private String businessName;
@@ -23,7 +27,8 @@ public class BusinessResponse {
         if (business.getLocation()!=null)this.location = business.getLocation();
         if (business.getDescription()!=null)this.description = business.getDescription();
         if (business.getSpecialty()!=null)this.specialty = business.getSpecialty();
+        if (business.getWebsite()!=null)this.website = business.getWebsite();
         if (business.getCredentials()!=null)this.credentials = business.getCredentials();
-        if (business.getCategory()!=null)this.category = business.getCategory();
+//        if (business.getCategory()!=null)this.category = business.getCategory();
     }
 }
