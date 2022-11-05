@@ -34,9 +34,9 @@ public class Business {
     private String specialty;
     @Column(name = "credentials")
     private String credentials;
-    @ManyToOne(fetch = FetchType.LAZY)
+
     @JoinColumn(name = "category_id")
-    private Category category;
+    private Long categoryId;
 
     public Business(BusinessRequest business){
         if (business.getBusinessName()!=null)this.businessName = business.getBusinessName();
@@ -46,7 +46,7 @@ public class Business {
         if (business.getSpecialty()!=null)this.specialty = business.getSpecialty();
         if (business.getCredentials()!=null)this.credentials = business.getCredentials();
         if (business.getWebsite()!=null)this.website = business.getWebsite();
-//        if (business.getCategory()!=null)this.category = business.getCategory();
+        if (business.getCategoryId()!=null)this.categoryId = business.getCategoryId();
     }
 
 }

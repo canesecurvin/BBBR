@@ -21,4 +21,9 @@ public class Favorites {
     private User user;
     @Column(name = "business_id")
     private Long businessId;
+
+    public Favorites(User user, Long businessId){
+        this.user = user;
+        this.businessId = businessId;
+    }
 }

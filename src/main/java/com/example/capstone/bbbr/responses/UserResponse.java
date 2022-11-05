@@ -16,14 +16,20 @@ public class UserResponse {
     private String firstName;
     private String lastName;
     private String email;
-    private List<Favorites> favorites;
+    private List<FavoritesResponse> favorites;
 
     public UserResponse(User user){
         if (user.getId()!=null)this.id = user.getId();
         if (user.getFirstName()!=null)this.firstName = user.getFirstName();
         if (user.getLastName()!=null)this.lastName = user.getLastName();
         if (user.getEmail()!=null)this.email = user.getEmail();
-        this.favorites = new ArrayList<>();
+    }
+    public UserResponse(User user, List<FavoritesResponse> favorites){
+        if (user.getId()!=null)this.id = user.getId();
+        if (user.getFirstName()!=null)this.firstName = user.getFirstName();
+        if (user.getLastName()!=null)this.lastName = user.getLastName();
+        if (user.getEmail()!=null)this.email = user.getEmail();
+        this.favorites = favorites;
     }
 
     public UserResponse(RegisterUserRequest user){
