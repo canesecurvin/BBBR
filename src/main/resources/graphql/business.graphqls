@@ -9,23 +9,24 @@ extend type Mutation {
 }
 
 input BusinessRequest {
-    business_name: String!
-    owner_name: String!
+    businessName: String!
+    ownerName: String!
     description: String!
     location: String!
     website: String!
     specialty: String!
     credentials: String!
-#    categoryId: Int!
+    categoryId: ID!
 }
 
 type BusinessResponse {
     id: ID!
-    business_name: String!
-    owner_name: String!
+    businessName: String!
+    ownerName: String!
     description: String!
     location: String!
     website: String!
     specialty: String!
     credentials: String!
+    categoryId: ID!
 }

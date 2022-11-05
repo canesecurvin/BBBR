@@ -53,20 +53,17 @@ public class BusinessServiceImpl implements BusinessService {
     }
 
     @Override
-    public BusinessResponse updateBusiness(BusinessRequest businessRequest, Long businessId){
-        ObjectMapper oMapper = new ObjectMapper();
-        Business business = new Business(businessRequest);
-        Map<String, String> map = oMapper.convertValue(business, Map.class);
+    public BusinessResponse updateBusiness(BusinessRequest bR, Long businessId){
+        Business business = new Business(bR);
         Optional<Business> businessOptional = businessRepository.findById(businessId);
         if (businessOptional.isPresent()){
             business = businessOptional.get();
-            if (map.get("businessName").length()>1)business.setBusinessName(map.get("businessName"));
-            if (map.get("description").length()>1)business.setDescription(map.get("description"));
-            if (map.get("website").length()>1)business.setWebsite(map.get("business"));
-            if (map.get("credentials").length()>1)business.setCredentials("credentials");
-            if (map.get("location").length()>1)business.setLocation(map.get("location"));
-            if (map.get("ownerName").length()>1)business.setOwnerName(map.get("ownerName"));
-            if (map.get("credentials").length()>1)business.setCredentials(map.get("credentials"));
+            if (bR.getBusinessName().length()>1)business.setBusinessName(bR.getBusinessName());
+            if (bR.getDescription().length()>1)business.setDescription(bR.getDescription());
+            if (bR.getWebsite().length()>1)business.setWebsite(bR.getWebsite());
+            if (bR.getLocation().length()>1)business.setLocation(bR.getLocation());
+            if (bR.getOwnerName().length()>1)business.setOwnerName(bR.getOwnerName());
+            if (bR.getCredentials().length()>1)business.setCredentials(bR.getCredentials());
             businessRepository.save(business);
         }
         return new BusinessResponse(business);

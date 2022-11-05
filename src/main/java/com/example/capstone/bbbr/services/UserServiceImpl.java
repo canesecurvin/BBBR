@@ -4,11 +4,13 @@ import com.example.capstone.bbbr.entities.User;
 import com.example.capstone.bbbr.repositories.UserRepository;
 import com.example.capstone.bbbr.requests.LoginUserRequest;
 import com.example.capstone.bbbr.requests.RegisterUserRequest;
+import com.example.capstone.bbbr.responses.FavoritesResponse;
 import com.example.capstone.bbbr.responses.UserResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 @Service
@@ -19,12 +21,15 @@ public class UserServiceImpl implements UserService {
     @Autowired
     PasswordEncoder passwordEncoder;
 
+    @Autowired
+    FavoritesService favoritesService;
+
     @Override
     public UserResponse registerUser(RegisterUserRequest registerUserRequest){
         User user = new User(registerUserRequest);
         user.setPassword(passwordEncoder.encode(registerUserRequest.getPassword()));
         userRepository.saveAndFlush(user);
-        return new UserResponse(user);
+        return new UserResponse(user, new ArrayList<>());
     }
     @Override
     public UserResponse userLogin(LoginUserRequest loginUserRequest) {
@@ -35,8 +40,10 @@ public class UserServiceImpl implements UserService {
                 userResponse.setId(userOptional.get().getId());
                 userResponse.setLastName(userOptional.get().getLastName());
                 userResponse.setFirstName(userOptional.get().getFirstName());
+                userResponse.setFavorites(favoritesService.userFavorites(userOptional.get().getId()));
             }
         }
+        System.out.println(userResponse);
         return userResponse;
     }
 
@@ -55,6 +62,6 @@ public class UserServiceImpl implements UserService {
             user.setId(userId);
             userRepository.saveAndFlush(user);
         }
-        return new UserResponse(user);
+        return new UserResponse(user, favoritesService.userFavorites(userId));
     }
 }
