@@ -7,10 +7,6 @@ import com.example.capstone.bbbr.entities.User;
 import com.example.capstone.bbbr.repositories.UserRepository;
 import com.example.capstone.bbbr.requests.LoginUserRequest;
 import com.example.capstone.bbbr.requests.RegisterUserRequest;
-<<<<<<< Updated upstream
-=======
-import com.example.capstone.bbbr.responses.JwtResponse;
->>>>>>> Stashed changes
 import com.example.capstone.bbbr.responses.UserResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,9 +18,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-<<<<<<< Updated upstream
-import java.util.Optional;
-=======
+import java.util.ArrayList;
 import java.text.ParseException;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -37,48 +31,17 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     PasswordEncoder passwordEncoder;
+    @Autowired
+    FavoritesService favoritesService;
 
-<<<<<<< Updated upstream
     @Override
     public UserResponse registerUser(RegisterUserRequest registerUserRequest){
         User user = new User(registerUserRequest);
         user.setPassword(passwordEncoder.encode(registerUserRequest.getPassword()));
         userRepository.saveAndFlush(user);
-        return new UserResponse(user);
-=======
-    @Autowired
-    FavoritesService favoritesService;
-
-    @Autowired
-    AuthenticationManager authenticationManager;
-
-    @Autowired
-    JwtTokenUtil jwtTokenUtil;
-    @Autowired
-    RoleService roleService;
-
-    @Override
-    public UserResponse registerUser(RegisterUserRequest registerUserRequest){
-        UserResponse userResponse = new UserResponse();
-        Optional<User> userOptional = userRepository.findByEmail(registerUserRequest.getEmail());
-        if (userOptional.isPresent()){
-            userResponse.setErrorMessage("Email already exists");
-        } else {
-            User user = new User(registerUserRequest);
-            user.setPassword(passwordEncoder.encode(registerUserRequest.getPassword()));
-            userResponse = new UserResponse(user);
-            Set<String> roleSet = new HashSet<>();
-            registerUserRequest.getRoles().forEach(role-> {
-                roleSet.add(role);
-            });
-            for(RoleEnum role: roleService.getUserRoleSet(roleSet)){
-                userResponse.setRoles(role);
-            }
-            userRepository.saveAndFlush(user);
-        }
-        return userResponse;
->>>>>>> Stashed changes
+        return new UserResponse(user, new ArrayList<>());
     }
+
     @Override
     public UserResponse userLogin(LoginUserRequest loginUserRequest) throws ParseException {
         Authentication authentication = authenticationManager.authenticate(
@@ -99,14 +62,13 @@ public class UserServiceImpl implements UserService {
                 userResponse.setId(userOptional.get().getId());
                 userResponse.setLastName(userOptional.get().getLastName());
                 userResponse.setFirstName(userOptional.get().getFirstName());
+                userResponse.setFavorites(favoritesService.userFavorites(userOptional.get().getId()));
             }
         }
-<<<<<<< Updated upstream
-=======
+
         JwtResponse jres = new JwtResponse(jwtToken, userResponse,roles);
         System.out.println(jres);
         userResponse.setJwtResponse(jres);
->>>>>>> Stashed changes
         return userResponse;
     }
 
@@ -125,6 +87,6 @@ public class UserServiceImpl implements UserService {
             user.setId(userId);
             userRepository.saveAndFlush(user);
         }
-        return new UserResponse(user);
+        return new UserResponse(user, favoritesService.userFavorites(userId));
     }
 }

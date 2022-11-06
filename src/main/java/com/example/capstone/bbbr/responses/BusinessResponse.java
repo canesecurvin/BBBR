@@ -18,9 +18,21 @@ public class BusinessResponse {
     private String description;
     private String specialty;
     private String credentials;
-    private Category category;
+    private Long categoryId;
 
     public BusinessResponse(Business business){
+        if (business.getId()!=null)this.id = business.getId();
+        if (business.getBusinessName()!=null)this.businessName = business.getBusinessName();
+        if (business.getOwnerName()!=null)this.ownerName = business.getOwnerName();
+        if (business.getLocation()!=null)this.location = business.getLocation();
+        if (business.getDescription()!=null)this.description = business.getDescription();
+        if (business.getSpecialty()!=null)this.specialty = business.getSpecialty();
+        if (business.getWebsite()!=null)this.website = business.getWebsite();
+        if (business.getCredentials()!=null)this.credentials = business.getCredentials();
+        if (business.getCategoryId()!=null)this.categoryId = business.getCategoryId();
+    }
+
+    public BusinessResponse(BusinessResponse business){
         if (business.getId()!=null)this.id = business.getId();
         if (business.getBusinessName()!=null)this.businessName = business.getBusinessName();
         if (business.getOwnerName()!=null)this.ownerName = business.getOwnerName();
