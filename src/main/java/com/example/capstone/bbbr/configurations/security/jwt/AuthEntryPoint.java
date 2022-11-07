@@ -13,6 +13,7 @@ import java.io.IOException;
 public class AuthEntryPoint implements AuthenticationEntryPoint {
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException, ServletException {
+        System.out.println("CANT DO IT FAM");
         response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
     }
 }

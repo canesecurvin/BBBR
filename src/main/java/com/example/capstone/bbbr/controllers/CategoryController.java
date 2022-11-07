@@ -15,7 +15,7 @@ import java.util.List;
 
 @Controller
 @Data
-@PreAuthorize("hasRole('USER_ADMIN')")
+@PreAuthorize("hasRole('ROLE_ADMIN')")
 public class CategoryController {
     @Autowired
     CategoryService categoryService;

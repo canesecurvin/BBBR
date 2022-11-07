@@ -1,7 +1,6 @@
 package com.example.capstone.bbbr.configurations.security;
 
 import com.example.capstone.bbbr.configurations.security.jwt.AuthEntryPoint;
-import com.example.capstone.bbbr.configurations.security.jwt.JwtTokenUtil;
 import com.example.capstone.bbbr.configurations.security.jwt.RequestFilter;
 import com.example.capstone.bbbr.configurations.security.services.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;

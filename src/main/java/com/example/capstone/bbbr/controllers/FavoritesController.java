@@ -16,6 +16,7 @@ import java.util.List;
 
 @Controller
 @Data
+@PreAuthorize("hasRole('ROLE_GENERAL')")
 public class FavoritesController {
     @Autowired
     FavoritesService favoritesService;

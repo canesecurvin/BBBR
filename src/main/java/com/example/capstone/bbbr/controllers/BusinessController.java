@@ -15,7 +15,7 @@ import java.util.List;
 
 @Controller
 @Data
-@PreAuthorize("hasRole('BUSINESS_OWNER')")
+@PreAuthorize("hasRole('ROLE_BUSINESS_OWNER')")
 public class BusinessController {
     @Autowired
     BusinessService businessService;

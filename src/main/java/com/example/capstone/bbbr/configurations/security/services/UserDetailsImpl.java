@@ -30,25 +30,21 @@ public class UserDetailsImpl implements UserDetails {
 
     private Collection<? extends GrantedAuthority> authorities;
 
-    public UserDetailsImpl(Long id, String username, String password,
-                           Collection<? extends GrantedAuthority> authorities) {
+    public UserDetailsImpl(Long id, String username, String password, Collection<? extends GrantedAuthority> authorities) {
         this.id = id;
         this.email = username;
         this.password = password;
+        System.out.println(authorities);
         this.authorities = authorities;
     }
 
-    public static UserDetailsImpl build(RegisterUserRequest user) {
-        Set<String> roleSet = new HashSet<>();
-        user.getRoles().forEach(role-> {
-            roleSet.add(role);
-        });
-        List<GrantedAuthority> authorities = roleService.getUserRoleSet(roleSet).stream()
-                .map(role -> new SimpleGrantedAuthority(role.name()))
+    public static UserDetailsImpl build(User user) {
+        List<GrantedAuthority> authorities = user.getRoles().stream()
+                .map(role -> new SimpleGrantedAuthority(role.getRoleName().name()))
                 .collect(Collectors.toList());
 
         return new UserDetailsImpl(
-                userRepository.findByEmail(user.getEmail()).get().getId(),
+                user.getId(),
                 user.getEmail(),
                 user.getPassword(),
                 authorities);

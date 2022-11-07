@@ -10,9 +10,9 @@ type Mutation {
 }
 
 enum ROLES {
-    USER_GENERAL
-    USER_ADMIN
-    USER_BUSINESS_OWNER
+    ROLE_GENERAL
+    ROLE_ADMIN
+    ROLE_BUSINESS_OWNER
 }
 
 input RegisterUserRequest {

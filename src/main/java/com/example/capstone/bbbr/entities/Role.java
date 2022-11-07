@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -19,4 +20,7 @@ public class Role {
     @Column(name = "role_name", unique = true)
     @Enumerated(EnumType.STRING)
     private RoleEnum roleName;
+
+    @ManyToMany(mappedBy = "roles", cascade = CascadeType.ALL)
+    private List<User> userByRoles;
 }
