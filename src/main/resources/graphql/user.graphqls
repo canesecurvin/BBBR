@@ -13,13 +13,6 @@ enum ROLES {
     ROLE_GENERAL
     ROLE_ADMIN
     ROLE_BUSINESS_OWNER
-    addRole(role: ROLES): String
-}
-
-enum ROLES {
-    ROLE_GENERAL
-    ROLE_ADMIN
-    ROLE_BUSINESS_OWNER
 }
 
 input RegisterUserRequest {
