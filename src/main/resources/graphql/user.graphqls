@@ -1,11 +1,18 @@
 type Query {
     userLogin(user: LoginUserRequest!): UserResponse
-    deleteUser(userId: ID!): String
 }
 
 type Mutation {
     newUser(user: RegisterUserRequest!): UserResponse
     updateUser(user: RegisterUserRequest!, userId: ID!): UserResponse
+    deleteUser(userId: ID!): String
+    addRole(role: ROLES): String
+}
+
+enum ROLES {
+    ROLE_GENERAL
+    ROLE_ADMIN
+    ROLE_BUSINESS_OWNER
     addRole(role: ROLES): String
 }
 
@@ -16,9 +23,9 @@ enum ROLES {
 }
 
 input RegisterUserRequest {
+    email: String!
     firstName: String!
     lastName: String!
-    email: String!
     password: String!
     roles: [String]
 }

@@ -14,7 +14,7 @@ input BusinessRequest {
     description: String!
     location: String!
     website: String!
-    specialty: String!
+    number: String!
     credentials: String!
     categoryId: ID!
 }
@@ -23,10 +23,10 @@ type BusinessResponse {
     id: ID!
     businessName: String!
     ownerName: String!
-    description: String!
+    description: String
     location: String!
-    website: String!
-    specialty: String!
-    credentials: String!
+    website: String
+    number: String
+    credentials: String
     categoryId: ID!
 }

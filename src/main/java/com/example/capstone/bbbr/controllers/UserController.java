@@ -36,7 +36,7 @@ public class UserController {
         return u;
     }
     @PreAuthorize("hasRole('ROLE_GENERAL')")
-    @QueryMapping
+    @MutationMapping
     public String deleteUser(@Argument("userId") Long userId){
         return userService.deleteUser(userId);
     }

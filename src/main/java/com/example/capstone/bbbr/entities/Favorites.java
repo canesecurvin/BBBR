@@ -14,7 +14,7 @@ import javax.persistence.*;
 public class Favorites {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @JoinColumn(name = "user_id")
     @ManyToOne(fetch = FetchType.LAZY)

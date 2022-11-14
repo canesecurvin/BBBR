@@ -63,6 +63,7 @@ public class BusinessServiceImpl implements BusinessService {
             if (bR.getWebsite().length()>1)business.setWebsite(bR.getWebsite());
             if (bR.getLocation().length()>1)business.setLocation(bR.getLocation());
             if (bR.getOwnerName().length()>1)business.setOwnerName(bR.getOwnerName());
+            if (bR.getNumber().length()>1)business.setNumber(bR.getNumber());
             if (bR.getCredentials().length()>1)business.setCredentials(bR.getCredentials());
             businessRepository.save(business);
         }
