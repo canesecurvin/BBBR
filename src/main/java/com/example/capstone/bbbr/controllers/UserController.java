@@ -1,20 +1,21 @@
 package com.example.capstone.bbbr.controllers;
 
+import com.example.capstone.bbbr.entities.RoleEnum;
 import com.example.capstone.bbbr.requests.LoginUserRequest;
 import com.example.capstone.bbbr.requests.RegisterUserRequest;
-import com.example.capstone.bbbr.responses.BusinessResponse;
 import com.example.capstone.bbbr.responses.UserResponse;
 import com.example.capstone.bbbr.services.BusinessService;
+import com.example.capstone.bbbr.services.RoleService;
 import com.example.capstone.bbbr.services.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
-import org.springframework.graphql.data.method.annotation.SchemaMapping;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 
-import java.util.List;
+import java.text.ParseException;
 
 @Controller
 @AllArgsConstructor
@@ -25,33 +26,40 @@ public class UserController {
     @Autowired
     BusinessService businessService;
 
-    @QueryMapping
-    public UserResponse userLogin(@Argument("user") LoginUserRequest loginUserRequest){
-        return userService.userLogin(loginUserRequest);
-    }
-<<<<<<< Updated upstream
+    @Autowired
+    RoleService roleService;
 
     @QueryMapping
-=======
+    public UserResponse userLogin(@Argument("user") LoginUserRequest loginUserRequest) throws ParseException {
+        UserResponse u = userService.userLogin(loginUserRequest);
+        System.out.println("---------CONTROLLER"+u.getJwtResponse().toString());
+        return u;
+    }
     @PreAuthorize("hasRole('ROLE_GENERAL')")
     @MutationMapping
->>>>>>> Stashed changes
     public String deleteUser(@Argument("userId") Long userId){
         return userService.deleteUser(userId);
     }
 
     @MutationMapping
     public UserResponse newUser(@Argument("user") RegisterUserRequest registerUserRequest){
-        return userService.registerUser(registerUserRequest);
+        UserResponse user = userService.registerUser(registerUserRequest);
+        if (user.getErrorMessage()!=null){
+            UserResponse ur = new UserResponse();
+            ur.setErrorMessage(user.getErrorMessage());
+            return ur;
+        } else return user;
     }
-
+    @PreAuthorize("hasRole('ROLE_GENERAL')")
     @MutationMapping
     public UserResponse updateUser(@Argument("user") RegisterUserRequest registerUserRequest, @Argument("userId") Long userId){
         return userService.updateUser(registerUserRequest, userId);
     }
 
-//    @SchemaMapping(typeName="UserResponse", field="favorites")
-//    public List<BusinessResponse> favorites(Long userId){
-//        return businessService.getAllBusinessesByUserId(userId);
-//    }
+    @MutationMapping
+    public String addRole(@Argument("role") RoleEnum roleEnum){
+        System.out.println(roleEnum);
+        roleService.addRole(roleEnum);
+        return "added";
+    }
 }

@@ -5,8 +5,6 @@ type Query {
 type Mutation {
     newUser(user: RegisterUserRequest!): UserResponse
     updateUser(user: RegisterUserRequest!, userId: ID!): UserResponse
-<<<<<<< Updated upstream
-=======
     deleteUser(userId: ID!): String
     addRole(role: ROLES): String
 }
@@ -15,7 +13,13 @@ enum ROLES {
     ROLE_GENERAL
     ROLE_ADMIN
     ROLE_BUSINESS_OWNER
->>>>>>> Stashed changes
+    addRole(role: ROLES): String
+}
+
+enum ROLES {
+    ROLE_GENERAL
+    ROLE_ADMIN
+    ROLE_BUSINESS_OWNER
 }
 
 input RegisterUserRequest {
@@ -23,16 +27,30 @@ input RegisterUserRequest {
     firstName: String!
     lastName: String!
     password: String!
+    roles: [String]
 }
+
 input LoginUserRequest {
     email: String!
     password: String!
 }
 
 type UserResponse {
-    id: ID!
-    firstName: String!
-    lastName: String!
-    email: String!
+    id: ID
+    firstName: String
+    lastName: String
+    email: String
+    favorites: [FavoriteResponse]
+    roles: [ROLES]
+    jwtResponse: JwtResponse
+    errorMessage: String
+}
+
+type JwtResponse {
+    jwtToken: String
+    tokenType: String
+    id: ID
+    username: String
+    roles: [String]
     favorites: [FavoriteResponse]
 }

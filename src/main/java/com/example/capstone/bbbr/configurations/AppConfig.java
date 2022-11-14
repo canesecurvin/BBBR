@@ -11,9 +11,6 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
 @Configuration
-<<<<<<< Updated upstream:src/main/java/com/example/capstone/bbbr/configurations/Config.java
-public class Config {
-=======
 public class AppConfig {
 
     @Value("${graphql.url:/graphql}")
@@ -33,7 +30,6 @@ public class AppConfig {
         bean.setOrder(0);
         return bean;
     }
->>>>>>> Stashed changes:src/main/java/com/example/capstone/bbbr/configurations/AppConfig.java
     @Bean
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
