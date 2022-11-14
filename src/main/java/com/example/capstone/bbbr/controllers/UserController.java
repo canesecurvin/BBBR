@@ -29,8 +29,13 @@ public class UserController {
     public UserResponse userLogin(@Argument("user") LoginUserRequest loginUserRequest){
         return userService.userLogin(loginUserRequest);
     }
+<<<<<<< Updated upstream
 
     @QueryMapping
+=======
+    @PreAuthorize("hasRole('ROLE_GENERAL')")
+    @MutationMapping
+>>>>>>> Stashed changes
     public String deleteUser(@Argument("userId") Long userId){
         return userService.deleteUser(userId);
     }

@@ -9,7 +9,7 @@ public class BusinessRequest {
     private String description;
     private String location;
     private String website;
-    private String specialty;
+    private String number;
     private String credentials;
     private Long categoryId;
 }

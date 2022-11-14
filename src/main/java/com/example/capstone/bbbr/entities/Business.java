@@ -16,7 +16,7 @@ import javax.persistence.*;
 @Table(name = "businesses")
 public class Business {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
@@ -30,8 +30,8 @@ public class Business {
     private String website;
     @Column(name = "description")
     private String description;
-    @Column(name = "specialty")
-    private String specialty;
+    @Column(name = "Number")
+    private String number;
     @Column(name = "credentials")
     private String credentials;
 
@@ -43,7 +43,7 @@ public class Business {
         if (business.getOwnerName()!=null)this.ownerName = business.getOwnerName();
         if (business.getLocation()!=null)this.location = business.getLocation();
         if (business.getDescription()!=null)this.description = business.getDescription();
-        if (business.getSpecialty()!=null)this.specialty = business.getSpecialty();
+        if (business.getNumber()!=null)this.number = business.getNumber();
         if (business.getCredentials()!=null)this.credentials = business.getCredentials();
         if (business.getWebsite()!=null)this.website = business.getWebsite();
         if (business.getCategoryId()!=null)this.categoryId = business.getCategoryId();
