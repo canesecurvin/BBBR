@@ -95,7 +95,7 @@ bbbr.app.expiration=
 ## Documentation
 
 Access GraphQL Interface at ```localhost:8080/graphiql``` or use Chrome dev tool: ```Altair GraphQL Client```
-<img src="src/main/resources/assets/swagger-ui.png" width="700" height="400"/></a>
+<img src="bbbr-graphql-server/photos/Screen Shot 2022-12-13 at 12.48.29 PM.png" width="700" height="400"/></a>
 
 #### Documentation Usage
 
