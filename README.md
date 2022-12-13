@@ -1,5 +1,5 @@
 <img src="https://github.com/canesecurvin/X3-Coursework/blob/master/readmeheader.png" width="1000" height=auto />
-<h1 align="center">movie management app 👋</h1>
+<p align="center"><h1 align="center"><img src="https://github.com/canesecurvin/BBBR/blob/main/bbbr-graphql-server/photos/Screen%20Shot%202022-08-07%20at%2011.17.41%20AM.png" width="200" height=auto />Black Businesses of Baton Rouge (BBBR) <img src="https://github.com/canesecurvin/BBBR/blob/main/bbbr-graphql-server/photos/Screen%20Shot%202022-08-07%20at%2011.17.41%20AM.png" width="200" height=auto /></h1></p>
 <p align="center">
   <a href="https://www.postgresql.org/">
     <img alt="node" src="https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=lightblue&style=flat" target="_blank" />
@@ -36,7 +36,7 @@
   </a>
 </p>
 
-> Movie management app that allows users to create account/log in to see a list of movies and the movies' details. Users have the ability to rate a movie on a 1-5 scale and to comment their thoughts about a movie. Users can also view their personal profile where they can see their recent activity listed by movie name and also update their profile info.
+> BBBR is an interactive directory for Black Businesses is the local area of Baton Rouge, Louisiana. This idea was created in response to the Black Lives Matter movement during the pandemic as a way to be a positive change in the community and uplift Black Lives. BBBR's goal is so serve Baton Rouge and the surrounding areas by providing a platform that celebrates Black Culture through entreprenuership, art and community outreach. 
 
 <!-- ## ✨ Demo
 
@@ -46,13 +46,25 @@
 
 ## 🚀 Usage & Tips
 
-Just run the following command at the root of your project and answer questions:
+> The BBBR project is set up as a project of microservices. As of now, I have not implemented containerizing the individual services. ```bbbr-frontend``` and ```bbbr-graphql-server``` can be ran as stand-alone applications.
 
-```sh
-mvn install
+1. Clone [BBBR Repository](https://github.com/canesecurvin/BBBR)
+```git clone https://github.com/canesecurvin/BBBR```
+
+2. Run ```bbbr-graphql-server``` as a `Maven Project` (Right-click on ```pom.xml```) and maven install
+```mvn install```
+
+3. Open terminal and `CD` into bbbr-frontend and install dependencies
+```
+cd bbbr-frontend
+npm install
 ```
 
-Add `application.properties` file to `src/main/resources directory`
+4. Run ```bbbr-frontend```
+```ng s``` or ```ng serve```
+> Access UI at ```localhost:4200/home```
+
+5. Add `application.properties` file to `src/main/resources directory`
 
 Your `application.properties` should have these properties:
 ```
@@ -60,19 +72,29 @@ spring.datasource.url=
 spring.datasource.username=
 spring.datasource.password=
 
-spring.datasource.driverClassName=
-spring.jpa.database-platform=
+spring.datasource.driverClassName=org.postgresql.Driver
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQL95Dialect
 
-spring.jpa.hibernate.ddl-auto=
-logging.level.sql=
-spring.jpa.show-sql=
+# create-drop
+spring.jpa.hibernate.ddl-auto=update
+logging.level.sql=debug
+spring.jpa.show-sql=true
 
-sec.jwt-secret=
-sec.jwt-expiration-milliseconds=
+graphql.servlet.mapping=/graphql
+graphql.servlet.enabled=true
+graphql.servlet.corsEnabled=true
+
+graphiql.enabled=true
+graphiql.endpoint=/graphql
+graphiql.mapping=graphiql
+
+bbbr.app.secret= 
+bbbr.app.expiration= 
 ```
+
 ## Documentation
 
-Access Swagger UI API Documentation at `{host}:{port}/swagger-ui/`
+Access GraphQL Interface at ```localhost:8080/graphiql``` or use Chrome dev tool: ```Altair GraphQL Client```
 <img src="src/main/resources/assets/swagger-ui.png" width="700" height="400"/></a>
 
 #### Documentation Usage
@@ -87,32 +109,14 @@ Access Swagger UI API Documentation at `{host}:{port}/swagger-ui/`
 
 ## Code Contributors
 
-<h4>This project exists thanks to all the people who contribute.</h4>
 <a href="https://github.com/canesecurvin"><img src="https://avatars.githubusercontent.com/u/77984787?v=4" width="100" height="100"/></a>
-<a href="https://github.com/crl03"><img src="https://avatars.githubusercontent.com/u/14933248?v=4" width="100" height="100"/></a>
-<a href="https://github.com/devfep"><img src="https://avatars.githubusercontent.com/u/90649300?v=4" width="100" height="100"/></a>
-<a href="https://github.com/NataliiaBor1"><img src="https://avatars.githubusercontent.com/u/114429981?v=4" width="100" height="100"/></a>
 
-## Authors
+## Author
 
 👤 **CA'NESE CURVIN**
 
 - Twitter: [@ccurvin1](https://twitter.com/ccurvin1)
 - Github: [@canesecurvin](https://github.com/canesecurvin)
-
-👤 **CHRIS LOJAC**
-
-- Github: [@crl03](https://github.com/crl03)
-
-👤 **FELIX PATAWAH**
-
-- Twitter: [@fepdev](https://twitter.com/fepdev)
-- Github: [@devfep](https://github.com/devfep)
-
-👤 **NATALIIA BORISENKO**
-
-- Twitter: [@NataliiaBor1](https://twitter.com/NataliiaBor1)
-- Github: [@NataliiaBor1](https://github.com/NataliiaBor1)
 
 ## Show your support
 
