@@ -1,5 +1,5 @@
 <img src="https://github.com/canesecurvin/X3-Coursework/blob/master/readmeheader.png" width="1000" height=auto />
-<p align="center"><h1 align="center"><img src="https://github.com/canesecurvin/BBBR/blob/main/bbbr-graphql-server/photos/Screen%20Shot%202022-08-07%20at%2011.17.41%20AM.png" width="200" height=auto />Black Businesses of Baton Rouge (BBBR) <img src="https://github.com/canesecurvin/BBBR/blob/main/bbbr-graphql-server/photos/Screen%20Shot%202022-08-07%20at%2011.17.41%20AM.png" width="200" height=auto /></h1></p>
+<p align="center"><img src="https://github.com/canesecurvin/BBBR/blob/readme/bbbr-graphql-server/photos/Screen_Shot_2022-08-07_at_11.17.41_AM-removebg-preview.png" width="200" height=auto /><h1 align="center">Black Businesses of Baton Rouge (BBBR)</h1></p>
 <p align="center">
   <a href="https://www.postgresql.org/">
     <img alt="node" src="https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=lightblue&style=flat" target="_blank" />
@@ -44,27 +44,30 @@
   <img width="700" align="center" src="https://user-images.githubusercontent.com/9840435/60266022-72a82400-98e7-11e9-9958-f9004c2f97e1.gif" alt="demo"/>
 </p> -->
 
+<br />
+<br />
+
 ## 🚀 Usage & Tips
 
 > The BBBR project is set up as a project of microservices. As of now, I have not implemented containerizing the individual services. ```bbbr-frontend``` and ```bbbr-graphql-server``` can be ran as stand-alone applications.
 
-1. Clone [BBBR Repository](https://github.com/canesecurvin/BBBR)
+Clone [BBBR Repository](https://github.com/canesecurvin/BBBR)
 ```git clone https://github.com/canesecurvin/BBBR```
 
-2. Run ```bbbr-graphql-server``` as a `Maven Project` (Right-click on ```pom.xml```) and maven install
+Run ```bbbr-graphql-server``` as a `Maven Project` (Right-click on ```pom.xml```) and maven install
 ```mvn install```
 
-3. Open terminal and `CD` into bbbr-frontend and install dependencies
+Open terminal and `CD` into bbbr-frontend and install dependencies
 ```
 cd bbbr-frontend
 npm install
 ```
 
-4. Run ```bbbr-frontend```
+Run ```bbbr-frontend```
 ```ng s``` or ```ng serve```
 > Access UI at ```localhost:4200/home```
 
-5. Add `application.properties` file to `src/main/resources directory`
+Add `application.properties` file to `src/main/resources directory`
 
 Your `application.properties` should have these properties:
 ```
