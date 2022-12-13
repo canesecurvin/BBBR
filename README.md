@@ -110,6 +110,12 @@ Access GraphQL Interface at ```localhost:8080/graphiql``` or use Chrome dev tool
 <br />
 <br />
 
+## Future Goals
+1. Implement Admin UI
+2. Implement search capability
+3. Implement Business Owner UI
+4. Containerize microservices using Docker
+
 ## Code Contributors
 
 <a href="https://github.com/canesecurvin"><img src="https://avatars.githubusercontent.com/u/77984787?v=4" width="100" height="100"/></a>
