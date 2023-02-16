@@ -116,9 +116,9 @@ Access GraphQL Interface at ```localhost:8080/graphiql``` or use Chrome dev tool
 3. Implement Business Owner UI
 4. Containerize microservices using Docker
 
-## Code Contributors
+<!---## Code Contributors
 
-<a href="https://github.com/canesecurvin"><img src="https://avatars.githubusercontent.com/u/77984787?v=4" width="100" height="100"/></a>
+<a href="https://github.com/diamondcurvin"><img src="https://avatars.githubusercontent.com/u/77984787?v=4" width="100" height="100"/></a>
 
 ## Author
 
@@ -129,4 +129,4 @@ Access GraphQL Interface at ```localhost:8080/graphiql``` or use Chrome dev tool
 
 ## Show your support
 
-Please ⭐️ this repository if this project helped you!
+Please ⭐️ this repository if this project helped you!--->
