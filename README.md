@@ -1,4 +1,4 @@
-<!---<img src="https://github.com/canesecurvin/X3-Coursework/blob/master/readmeheader.png" width="1000" height=auto />--->
+<img src="https://github.com/canesecurvin/X3-Coursework/blob/master/readmeheader.png" width="1000" height=auto />
 <p align="center"><img src="https://github.com/canesecurvin/BBBR/blob/readme/bbbr-graphql-server/photos/Screen_Shot_2022-08-07_at_11.17.41_AM-removebg-preview.png" width="200" height=auto /><h1 align="center">Black Businesses of Baton Rouge (BBBR)</h1></p>
 <p align="center">
   <a href="https://www.postgresql.org/">
@@ -116,7 +116,7 @@ Access GraphQL Interface at ```localhost:8080/graphiql``` or use Chrome dev tool
 3. Implement Business Owner UI
 4. Containerize microservices using Docker
 
-<!---## Code Contributors
+## Code Contributors
 
 <a href="https://github.com/diamondcurvin"><img src="https://avatars.githubusercontent.com/u/77984787?v=4" width="100" height="100"/></a>
 
@@ -129,4 +129,4 @@ Access GraphQL Interface at ```localhost:8080/graphiql``` or use Chrome dev tool
 
 ## Show your support
 
-Please ⭐️ this repository if this project helped you!--->
+Please ⭐️ this repository if this project helped you!
