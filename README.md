@@ -1,5 +1,5 @@
 <img src="https://github.com/canesecurvin/X3-Coursework/blob/master/readmeheader.png" width="1000" height=auto />
-<p align="center"><img src="https://github.com/canesecurvin/BBBR/blob/readme/bbbr-graphql-server/photos/Screen_Shot_2022-08-07_at_11.17.41_AM-removebg-preview.png" width="200" height=auto /><h1 align="center">Black Businesses of Baton Rouge (BBBR)</h1></p>
+<p align="center"><img src="https://github.com/canesecurvin/BBBR/blob/main/bbbr-graphql-server/photos/Screen_Shot_2022-08-07_at_11.17.41_AM-removebg-preview.png" width="200" height=auto /><h1 align="center">Black Businesses of Baton Rouge (BBBR)</h1></p>
 <p align="center">
   <a href="https://www.postgresql.org/">
     <img alt="node" src="https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=lightblue&style=flat" target="_blank" />
