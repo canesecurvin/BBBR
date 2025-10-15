@@ -41,7 +41,7 @@
 ## ✨ Demo
 
 <p align="center">
-  <img width="700" align="center" src="[BBBR Demo - No Sound](https://drive.google.com/file/d/16U5hBFuEz03SnPG0VsLCF8iGIcBY01Vp/view?usp=sharing)" alt="demo"/>
+  <img width="700" align="center" src="[BBBR Demo - No Sound](https://drive.google.com/file/d/16U5hBFuEz03SnPG0VsLCF8iGIcBY01Vp/view?usp=sharing)](https://drive.google.com/file/d/16U5hBFuEz03SnPG0VsLCF8iGIcBY01Vp/view?usp=sharing)" alt="demo"/>
 </p> 
 
 <br />
