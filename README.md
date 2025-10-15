@@ -40,7 +40,7 @@
 
 ## ✨ Demo
 
-[![BBBR Demo - No Sound]([https://github.com/user-attachments/assets/a3bcbacd-d3b3-45ea-b209-eaaebaf8c40a](https://github.com/canesecurvin/BBBR/blob/main/bbbr-graphql-server/photos/Screen%20Shot%202022-08-07%20at%2011.17.41%20AM.png)](https://drive.google.com/file/d/16U5hBFuEz03SnPG0VsLCF8iGIcBY01Vp/view?usp=sharing)
+[![BBBR Demo - No Sound](https://github.com/canesecurvin/BBBR/blob/main/bbbr-graphql-server/photos/Screen%20Shot%202022-08-07%20at%2011.17.41%20AM.png)](https://drive.google.com/file/d/16U5hBFuEz03SnPG0VsLCF8iGIcBY01Vp/view?usp=sharing)
 
 <br />
 <br />
