@@ -38,11 +38,11 @@
 
 > BBBR is an interactive directory for Black Businesses is the local area of Baton Rouge, Louisiana. This idea was created in response to the Black Lives Matter movement during the pandemic as a way to be a positive change in the community and uplift Black Lives. BBBR's goal is so serve Baton Rouge and the surrounding areas by providing a platform that celebrates Black Culture through entreprenuership, art and community outreach. 
 
-<!-- ## ✨ Demo
+## ✨ Demo
 
 <p align="center">
-  <img width="700" align="center" src="https://user-images.githubusercontent.com/9840435/60266022-72a82400-98e7-11e9-9958-f9004c2f97e1.gif" alt="demo"/>
-</p> -->
+  <img width="700" align="center" src="[BBBR Demo - No Sound](https://drive.google.com/file/d/16U5hBFuEz03SnPG0VsLCF8iGIcBY01Vp/view?usp=sharing)" alt="demo"/>
+</p> 
 
 <br />
 <br />
