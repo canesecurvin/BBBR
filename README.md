@@ -40,6 +40,9 @@
 
 ## ✨ Demo
 
+[![BBBR Demo - No Sound](https://your-thumbnail-url.com/image.jpg)]("https://drive.google.com/file/d/16U5hBFuEz03SnPG0VsLCF8iGIcBY01Vp/view?usp=sharing)
+
+
 <p>[BBBR Demo - No Sound] <video src="https://drive.google.com/file/d/16U5hBFuEz03SnPG0VsLCF8iGIcBY01Vp/view?usp=sharing"></video></p> 
 
 <br />
