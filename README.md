@@ -40,7 +40,7 @@
 
 ## ✨ Demo
 
-[![BBBR Demo - No Sound](https://your-thumbnail-url.com/image.jpg)]("https://drive.google.com/file/d/16U5hBFuEz03SnPG0VsLCF8iGIcBY01Vp/view?usp=sharing)
+[BBBR Demo - No Sound](https://github.com/user-attachments/assets/a3bcbacd-d3b3-45ea-b209-eaaebaf8c40a")(https://drive.google.com/file/d/16U5hBFuEz03SnPG0VsLCF8iGIcBY01Vp/view?usp=sharing)
 
 
 <p>[BBBR Demo - No Sound] <video src="https://drive.google.com/file/d/16U5hBFuEz03SnPG0VsLCF8iGIcBY01Vp/view?usp=sharing"></video></p> 
